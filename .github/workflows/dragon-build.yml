@@ -14,16 +14,22 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: macos-10.15
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Run a multi-line script
-        run:  |
-              sudo apt-get update 
-              sudo apt-get upgrade
-              sudo apt-get install fakeroot git perl build-essential libtinfo5 -y
-              sudo update-alternatives --set fakeroot /usr/bin/fakeroot-tcp
+      - uses: Randomblock1/theos-action@v1
+        with:
+          # This is where Theos is stored, relative to the runner workspace.
+          # By default, it's just theos.
+          theos-dir: ''
+          # This is where Theos will be git cloned from. It must be a Git repository.
+          # By default, it's https://github.com/theos/theos.
+          theos-src: ''
+          # This is where the Theos SDKs will be downloaded from. It must be a GitHub URL.
+          # By default, it's https://github.com/theos/sdks.
+          # However, you'll probably want to set this manually if you want to compile using newer frameworks, like iOS 13 or 14.
+          theos-sdks: ''
