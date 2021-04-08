@@ -50,6 +50,7 @@ jobs:
             git clone https://EvanDbg:Aa552618@github.com/EvanDbg/Signe.git
             cd Signe
             pwd
+            make clean package
             # sed -i "s/install//g" ./build.sh
             # cat ./build.sh
             # bash ./build.sh
