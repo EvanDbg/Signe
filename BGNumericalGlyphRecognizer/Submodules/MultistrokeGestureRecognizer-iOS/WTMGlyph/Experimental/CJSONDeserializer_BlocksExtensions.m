@@ -8,7 +8,7 @@
 
 #import "CJSONDeserializer_BlocksExtensions.h"
 
-#import "CJSONScanner.h"
+#import "../JSON/CJSONScanner.h"
 
 @implementation CJSONDeserializer (CJSONDeserializer_BlocksExtensions)
 

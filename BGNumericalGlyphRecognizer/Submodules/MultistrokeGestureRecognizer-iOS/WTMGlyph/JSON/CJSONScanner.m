@@ -29,7 +29,7 @@
 
 #import "CJSONScanner.h"
 
-#import "CDataScanner_Extensions.h"
+#import "../Extensions/CDataScanner_Extensions.h"
 
 #if !defined(TREAT_COMMENTS_AS_WHITESPACE)
 #define TREAT_COMMENTS_AS_WHITESPACE 0

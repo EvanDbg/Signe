@@ -3,6 +3,29 @@
 #include "../Signe.h"
 #import "MediaRemote.h"
 
+#import <RemoteLog.h>
+
+#import <Foundation/Foundation.h>
+#import <libactivator/libactivator.h>
+#import <UIKit/UIKit.h>
+
+#include <dispatch/dispatch.h>
+#include <objc/runtime.h>
+
+#define LASendEventWithName(eventName) \
+	[LASharedActivator sendEventToListener:[LAEvent eventWithName:eventName mode:[LASharedActivator currentEventMode]]]
+
+static NSString *Number1 = @"Signe Draw Number 1";
+static NSString *Number2 = @"Signe Draw Number 2";
+static NSString *Number3 = @"Signe Draw Number 3";
+static NSString *Number4 = @"Signe Draw Number 4";
+static NSString *Number5 = @"Signe Draw Number 5";
+static NSString *Number6 = @"Signe Draw Number 6";
+static NSString *Number7 = @"Signe Draw Number 7";
+static NSString *Number8 = @"Signe Draw Number 8";
+static NSString *Number9 = @"Signe Draw Number 9";
+static NSString *Number0 = @"Signe Draw Number 0";
+
 @implementation SigneUtilities
 
 
@@ -47,6 +70,16 @@
             @"controlCenter": [NSValue valueWithPointer:@selector(presentControlCenter)],
             @"notificationCenter": [NSValue valueWithPointer:@selector(presentNotificationCenter)],
             @"flashlight": [NSValue valueWithPointer:@selector(toggleFlashlight)],
+            @"activator1": [NSValue valueWithPointer:@selector(activator1)],
+            @"activator2": [NSValue valueWithPointer:@selector(activator2)],
+            @"activator3": [NSValue valueWithPointer:@selector(activator3)],
+            @"activator4": [NSValue valueWithPointer:@selector(activator4)],
+            @"activator5": [NSValue valueWithPointer:@selector(activator5)],
+            @"activator6": [NSValue valueWithPointer:@selector(activator6)],
+            @"activator7": [NSValue valueWithPointer:@selector(activator7)],
+            @"activator8": [NSValue valueWithPointer:@selector(activator8)],
+            @"activator9": [NSValue valueWithPointer:@selector(activator9)],
+            @"activator0": [NSValue valueWithPointer:@selector(activator0)],
         } mutableCopy];
         self.commandKeys = [[NSMutableDictionary alloc] init];
         self.shouldContinueAfterAlert = NO;
@@ -271,6 +304,56 @@
         [self.flashlight setFlashlightLevel:1 withError:nil];
         self.flashlightEnabled = YES;
     }
+}
+
+-(void)activator1
+{
+    LASendEventWithName(Number1);
+}
+
+-(void)activator2
+{
+    LASendEventWithName(Number2);
+}
+
+-(void)activator3
+{
+    LASendEventWithName(Number3);
+}
+
+-(void)activator4
+{
+    LASendEventWithName(Number4);
+}
+
+-(void)activator5
+{
+    LASendEventWithName(Number5);
+}
+
+-(void)activator6
+{
+    LASendEventWithName(Number6);
+}
+
+-(void)activator7
+{
+    LASendEventWithName(Number7);
+}
+
+-(void)activator8
+{
+    LASendEventWithName(Number8);
+}
+
+-(void)activator9
+{
+    LASendEventWithName(Number9);
+}
+
+-(void)activator0
+{
+    LASendEventWithName(Number0);
 }
 
 #pragma mark Set Commands

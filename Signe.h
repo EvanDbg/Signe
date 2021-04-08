@@ -1,7 +1,7 @@
 #define kIdentifier @"me.kritanta.signeprefs"
 #define kSettingsChangedNotification (CFStringRef)@"me.kritanta.signeprefs/Prefs"
 #define kSettingsPath @"/var/mobile/Library/Preferences/me.kritanta.signeprefs.plist"
-#include "BGNumberCanvas.h"
+#include "BGNumericalGlyphRecognizer/BGNumericalGlyphRecognizer/BGNumberCanvas.h"
 
 #define kBorderWidth 3.0
 #define kCornerRadius 5.0

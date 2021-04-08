@@ -1,0 +1,9 @@
+Package: me.kritanta.signe
+Name: Signe
+Version: 1.1.0
+Architecture: iphoneos-arm
+Description: gesture recognition across iOS
+Maintainer: EVAN <215288968@qq.com>
+Author: EVAN <215288968@qq.com>
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 3.0), com.rpetrich.rocketbootstrap (>= 1.0.3) | firmware (<< 7.0), ws.hbang.alderis

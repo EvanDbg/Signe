@@ -27,7 +27,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "CDataScanner.h"
+#import "../CDataScanner.h"
 
 @interface CDataScanner (CDataScanner_Extensions)
 

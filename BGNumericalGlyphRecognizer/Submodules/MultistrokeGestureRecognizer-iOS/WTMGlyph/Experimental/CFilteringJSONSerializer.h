@@ -6,7 +6,7 @@
 //  Copyright 2010 toxicsoftware.com. All rights reserved.
 //
 
-#import "CJSONSerializer.h"
+#import "../JSON/CJSONSerializer.h"
 
 typedef NSString *(^JSONConversionTest)(id inObject);
 typedef id (^JSONConversionConverter)(id inObject); // TODO replace with value transformers.

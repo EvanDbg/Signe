@@ -29,7 +29,7 @@
 
 #import "NSDictionary_JSONExtensions.h"
 
-#import "CJSONDeserializer.h"
+#import "../JSON/CJSONDeserializer.h"
 
 @implementation NSDictionary (NSDictionary_JSONExtensions)
 

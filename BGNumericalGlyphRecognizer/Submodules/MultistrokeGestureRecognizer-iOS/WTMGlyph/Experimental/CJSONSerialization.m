@@ -8,8 +8,8 @@
 
 #import "CJSONSerialization.h"
 
-#import "CJSONDeserializer.h"
-#import "CJSONSerializer.h"
+#import "../JSON/CJSONDeserializer.h"
+#import "../JSON/CJSONSerializer.h"
 
 @implementation CJSONSerialization
 

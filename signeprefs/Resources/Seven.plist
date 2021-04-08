@@ -27,6 +27,7 @@
 				<integer>1</integer>
 				<integer>2</integer>
 				<integer>3</integer>
+				<integer>4</integer>
 			</array>
 			<key>validTitles</key>
 			<array>
@@ -34,6 +35,7 @@
 				<string>Open App</string>
 				<string>Open URL</string>
 				<string>Command</string>
+				<string>Bash</string>
 			</array>
 			<key>id</key>
 			<string>rotationMode7ID</string>
@@ -127,6 +129,7 @@
 				<string>Open/Close Control Center</string>
 				<string>Open/Close Notification Center</string>
 				<string>Toggle Flashlight</string>
+				<string>Activator Listener</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -145,6 +148,7 @@
 				<string>controlCenter</string>
 				<string>notificationCenter</string>
 				<string>flashlight</string>
+				<string>activator7</string>
 			</array>
 			<key>PostNotification</key>
 			<string>me.kritanta.signeprefs/Prefs</string>

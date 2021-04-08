@@ -6,8 +6,8 @@
 // 
 
 #include "Signe.h"
-#include "SigneManager.h"
-#include "SigneUtilities.h"
+#include "SigneManager/SigneManager.h"
+#include "SigneManager/SigneUtilities.h"
 #import <AudioToolbox/AudioToolbox.h>
 #include "libcolorpicker.h"
 

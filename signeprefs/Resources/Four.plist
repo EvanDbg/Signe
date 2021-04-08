@@ -127,6 +127,7 @@
 				<string>Open/Close Control Center</string>
 				<string>Open/Close Notification Center</string>
 				<string>Toggle Flashlight</string>
+				<string>Activator Listener</string>
 			</array>
 			<key>validValues</key>
 			<array>
@@ -145,6 +146,7 @@
 				<string>controlCenter</string>
 				<string>notificationCenter</string>
 				<string>flashlight</string>
+				<string>activator4</string>
 			</array>
 			<key>PostNotification</key>
 			<string>me.kritanta.signeprefs/Prefs</string>

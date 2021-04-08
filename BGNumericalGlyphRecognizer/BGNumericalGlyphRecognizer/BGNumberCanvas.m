@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#include "SigneManager.h"
-#include "SigneUtilities.h"
+#include "../../SigneManager/SigneManager.h"
+#include "../../SigneManager/SigneUtilities.h"
 #import "BGNumberCanvas.h"
 #import "DetectedNumber.h"
-#import "CJSONSerializer.h"
-#import "WTMGlyphDetector.h"
+#import "../Submodules/MultistrokeGestureRecognizer-iOS/WTMGlyph/JSON/CJSONSerializer.h"
+#import "../Submodules/MultistrokeGestureRecognizer-iOS/WTMGlyph/WTMGlyphDetector.h"
 
 @interface SBLockScreenManager
 
@@ -542,7 +542,7 @@
     CGContextFlush(context);
     [self setNeedsDisplay];
     [self clear];
-        // Get the command that has been set for the key (numbers 0-9) and perform the command
+    // Get the command that has been set for the key (numbers 0-9) and perform the command
     [[SigneUtilities sharedUtilities] performCommandForKey:[[SigneUtilities sharedUtilities] getCommandForKey:n.value]];
 
     // If a command has not been found, perform an action.
@@ -552,6 +552,7 @@
 
     paintLayer = nil;
     [self removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DeactivateSigne" object:nil];
 }
 
 #pragma mark Convenience Methods

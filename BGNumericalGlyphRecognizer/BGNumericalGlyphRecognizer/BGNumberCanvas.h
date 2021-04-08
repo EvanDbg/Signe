@@ -7,7 +7,7 @@
 //
 
 #import "BGCanvas.h"
-#import "WTMGlyphDetector.h"
+#import "../Submodules/MultistrokeGestureRecognizer-iOS/WTMGlyph/WTMGlyphDetector.h"
 #import "DetectedNumber.h"
 
 @protocol BGNumberCanvasDelegate <NSObject>

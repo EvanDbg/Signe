@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Foundry376. All rights reserved.
 //
 
-#include "SigneManager.h"
+#include "../../SigneManager/SigneManager.h"
 #import "BGCanvas.h"
 
 @implementation BGCanvas

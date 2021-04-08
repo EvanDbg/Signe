@@ -29,7 +29,7 @@
 
 #import "CDataScanner.h"
 
-#import "CDataScanner_Extensions.h"
+#import "Extensions/CDataScanner_Extensions.h"
 
 @interface CDataScanner ()
 @end

@@ -27,7 +27,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "CDataScanner.h"
+#import "../CDataScanner.h"
 
 enum {
     kJSONScannerOptions_MutableContainers = 0x1,

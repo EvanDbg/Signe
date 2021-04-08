@@ -10,7 +10,7 @@
 #import "WTMGlyphStroke.h"
 #import "WTMGlyphTemplate.h"
 #import "WTMGlyphUtilities.h"
-#import "CJSONDeserializer.h"
+#import "JSON/CJSONDeserializer.h"
 
 @implementation WTMGlyph
 
