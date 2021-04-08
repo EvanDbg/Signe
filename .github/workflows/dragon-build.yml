@@ -1,11 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: dragon-build
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -14,22 +12,54 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: macos-10.15
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - uses: Randomblock1/theos-action@v1
+      - name: Run within Docker
+        uses: addnab/docker-run-action@v3
         with:
-          # This is where Theos is stored, relative to the runner workspace.
-          # By default, it's just theos.
-          theos-dir: ''
-          # This is where Theos will be git cloned from. It must be a Git repository.
-          # By default, it's https://github.com/theos/theos.
-          theos-src: ''
-          # This is where the Theos SDKs will be downloaded from. It must be a GitHub URL.
-          # By default, it's https://github.com/theos/sdks.
-          # However, you'll probably want to set this manually if you want to compile using newer frameworks, like iOS 13 or 14.
-          theos-sdks: 'https://github.com/TroyMicrocode/iPhoneSDK/tree/master/iPhoneOS12.0.sdk'
+          image: evvvvan/theos-build:latest
+          shell: bash
+          run: |
+            bash <(curl -s https://raw.githubusercontent.com/DragonBuild/installer/master/install.sh)
+            cd $THEOS/sdks
+            rm -rf iPhoneOS10.3.sdk
+            rm -rf iPhoneOS11.2.sdk
+            rm -rf iPhoneOS12.1.2.sdk
+            rm -rf iPhoneOS13.0.sdk
+            rm -rf iPhoneOS13.4.sdk
+            rm -rf iPhoneOS13.5.sdk
+            rm -rf iPhoneOS13.6.sdk
+            rm -rf iPhoneOS13.7.sdk
+            rm -rf iPhoneOS14.3.sdk
+            rm -rf iPhoneOS12.4.sdk
+            rm -rf iPhoneOS9.3.sdk
+            echo '#import <theos/BackwardsCompat.h>'>>$THEOS/Prefix.pch
+            echo '#import <Foundation/Foundation.h>'>>$THEOS/Prefix.pch
+            echo '#import <UIKit/UIKit.h>'>>$THEOS/Prefix.pch
+            echo '#import <theos/IOSMacros.h>'>>$THEOS/Prefix.pch
+            echo '#import <HBLog.h>'>>$THEOS/Prefix.pch
+            echo '#import <RemoteLog.h>'>>$THEOS/Prefix.pch
+            cd ~
+            git config --global user.email "yangf1023@icloud.com"
+            git config --global user.name "EvanDbg"
+            git clone https://github.com/Muirey03/RemoteLog.git
+            mv RemoteLog/RemoteLog.h $THEOS/include
+            git clone https://EvanDbg:Aa552618@github.com/EvanDbg/Signe.git
+            cd Signe
+            pwd
+            # sed -i "s/install//g" ./build.sh
+            # cat ./build.sh
+            # bash ./build.sh
+            # git add ./packages
+            # git commit -m "new build"
+            # git push origin master
+            cd ~
+            pwd
+            # curl -LO https://github.com/qiniu/qshell/releases/download/v2.5.0/qshell-v2.5.0-linux-amd64.tar.gz
+            # tar -xzvf qshell-v2.5.0-linux-amd64.tar.gz
+            # ./qshell account OzGM3TjhFDg_rBAX323WGtE_ZlKv6x8qfuJJavdZ r21BNOh-yGU0eD41dxNsaOco27faWsY7ty_YIfJu evan1s
+            # ./qshell qupload2 --src-dir=$(pwd)/NotiX/packages --bucket=evan1s --overwrite=true
+            # curl https://api.day.app/oscvrdJCinKuuuf2dSUXhL/"Github Action"/"NotiX Build Successful"
